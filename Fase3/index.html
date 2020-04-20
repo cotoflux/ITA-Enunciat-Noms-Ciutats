@@ -9,16 +9,67 @@
     <script>
         var num1=prompt("Introdueix el nom de la primera ciutat: ");
         var num2=prompt("Introdueix el nom de la segona ciutat: ");
-        var num3=prompt("Introdueix el nom de la tercera ciutat: ");
-        var num4=prompt("Introdueix el nom de la quarta ciutat: ");
-        var num5=prompt("Introdueix el nom de la cinquena ciutat: ");
-        var num6=prompt("Introdueix el nom de la sisena ciutat: ");
+        //var num3=prompt("Introdueix el nom de la tercera ciutat: ");
+        //var num4=prompt("Introdueix el nom de la quarta ciutat: ");
+        //var num5=prompt("Introdueix el nom de la cinquena ciutat: ");
+        //var num6=prompt("Introdueix el nom de la sisena ciutat: ");
 
-        console.log(num1+ ",", num2+ "," , num3+ ",", num4+ ",", num5+ ",", num5+ ",",num6+ "," );
-
-        var arrayCiutats = [num1, num2, num3, num4, num5, num6];
-
+        var arrayCiutats = [num1, num2];
+        var arrayCiutatsIntermitja = [];
+        var arrayCiutatsModificada = [];
+        var i;
         console.log(arrayCiutats);
+        console.log(arrayCiutatsIntermitja);
+        for(i=0; i<arrayCiutats.length; i++){
+            
+            for(j=0; j<arrayCiutats[i].length; j++){
+                let miLetra = arrayCiutats[i].charAt(j)
+                if(miLetra == "a" || miLetra =="e" || miLetra=="i"|| miLetra=="o"|| miLetra=="u"){
+                    arrayCiutatsIntermitja.push(miLetra = 4);
+                }else{
+                    arrayCiutatsIntermitja.push(miLetra);             
+                }        
+            }
+
+        }
+
+        //Primera ciutat
+        var primeraPalabra =arrayCiutats[0].length;
+        console.log(primeraPalabra);
+        var nombre1 =  arrayCiutatsIntermitja.slice(0, primeraPalabra);
+        window.alert(nombre1);
+        var nombre11 = [];
+        for(z=0; z<nombre1.length; z= z+2){
+            nombre11.push(nombre1.join(''));
+         }
+        arrayCiutatsModificada.push(nombre11[0]);
+
+
+        //Segona ciutat
+        var segonaPalabra =arrayCiutats[1].length;
+        var segonaParaula = primeraPalabra +segonaPalabra+3;
+        console.log(segonaPalabra);
+        console.log(segonaParaula);
+        var nombre2 =  arrayCiutatsIntermitja.slice(0, segonaParaula);
+        window.alert(nombre2);
+        var nombre22 = [];
+        for(z=0; z<nombre2.length; z= z+2){
+            nombre22.push(nombre2.join(''));
+         }
+        arrayCiutatsModificada.push(nombre22[1]);
+
+        /*//Tercera ciutat
+        var terceraPalabra =arrayCiutats[2].length;
+        var nombre3 =  arrayCiutatsIntermitja.slice(0, terceraPalabra);
+        window.alert(nombre3);
+        var nombre33 = [];
+        for(z=0; z<nombre3.length; z= z+2){
+            nombre33.push(nombre3.join(''));
+         }
+        arrayCiutatsModificada.push(nombre33[0]);*/
+
+
+        console.log(arrayCiutatsModificada);
     </script>
 </body>
 </html>
